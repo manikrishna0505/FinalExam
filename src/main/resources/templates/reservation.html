@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservation Form</title>
+    <style>
+        body {
+            background-image: url('/img/airplane.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        form {
+            background: rgba(0, 0, 0, 0.7);
+            margin: 50px auto;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px;
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fill your Details</h2>
+    <form th:action="@{/submitReservation}" th:object="${reservation}" method="post">
+        <input type="text" th:field="*{firstName}" placeholder="First Name" required />
+        <input type="text" th:field="*{lastName}" placeholder="Last Name" required />
+        <input type="number" th:field="*{numOfPassengers}" placeholder="No. of Passengers" required />
+        <select th:field="*{travelClass}">
+            <option value="Economy">Economy class</option>
+            <option value="Business">Business class</option>
+        </select>
+        <input type="text" th:field="*{phone}" placeholder="Phone Number" required />
+        <input type="text" th:field="*{time}" placeholder="Time" required />
+        <input type="date" th:field="*{departDate}" placeholder="Date of Departing" required />
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>

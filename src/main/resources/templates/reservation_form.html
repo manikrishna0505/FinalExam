@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Husky Air Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #003973, #e5e5be);
+            color: #000;
+            text-align: center;
+            padding: 50px;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00000033;
+        }
+        input, select {
+            margin: 10px;
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+        input[type="submit"] {
+            background-color: #003973;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fill your Details</h2>
+    <form th:action="@{/submitReservation}" th:object="${reservation}" method="post">
+        <input type="text" th:field="*{firstName}" placeholder="First Name" required/><br/>
+        <input type="text" th:field="*{lastName}" placeholder="Last Name" required/><br/>
+        <input type="number" th:field="*{passengers}" placeholder="No. of Passengers" required/><br/>
+        <select th:field="*{travelClass}" required>
+            <option value="Economy class">Economy class</option>
+            <option value="Business class">Business class</option>
+            <option value="First class">First class</option>
+        </select><br/>
+        <input type="text" th:field="*{phoneNumber}" placeholder="Phone Number" required/><br/>
+        <input type="text" th:field="*{time}" placeholder="Time" required/><br/>
+        <input type="date" th:field="*{date}" required/><br/>
+        <input type="submit" value="Next"/>
+    </form>
+</body>
+</html>

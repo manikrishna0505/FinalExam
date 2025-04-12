@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservation Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2BC0E4, #EAECC6);
+            padding: 40px;
+            text-align: center;
+        }
+        .card {
+            display: inline-block;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 0 10px #ccc;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>🎉 Reservation Confirmed!</h2>
+        <p th:text="'Thank you, ' + ${customerName} + ' for booking with Husky Air.'"></p>
+        <p th:text="'You selected ' + ${reservation.travelClass} + ' class for ' + ${reservation.passengers} + ' passenger(s).'"></p>
+        <p th:text="'Date of Departure: ' + ${reservation.date}"></p>
+        <p th:text="'Payment Amount: $' + ${paymentAmount}"></p>
+    </div>
+</body>
+</html>
