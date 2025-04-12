@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Manikrishna_Katteboyina_ITE5435_FinalExam
 
 This is a Spring Boot application for Husky Air reservation system.
@@ -14,3 +15,6 @@ This is a Spring Boot application for Husky Air reservation system.
 - Jackson for JSON processing
 - MongoDB for data persistence
 - Thymeleaf for front-end
+=======
+# FinalExam
+>>>>>>> e7c1b99a18bc5a7ce3260f6da8ef37397725461b
